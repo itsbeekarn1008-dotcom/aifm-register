@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AIFM Registration</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .card {
+      width: 420px;
+      background: white;
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #e8efff;
+      color: #2563eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+
+    #message {
+      margin-top: 18px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="badge">EVENT REGISTRATION</div>
+
+    <h1>AIFM Registration</h1>
+    <p>ลงทะเบียนเข้าร่วมงาน AI Film Making</p>
+
+    <form id="registerForm">
+      <input type="text" name="fullName" placeholder="ชื่อ-นามสกุล" required>
+      <input type="email" name="email" placeholder="อีเมล" required>
+      <input type="tel" name="phone" placeholder="เบอร์โทร" required>
+      <input type="text" name="organization" placeholder="มหาวิทยาลัย / บริษัท">
+
+      <button type="submit">ลงทะเบียน</button>
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxB3CaeeKFO1hNHg_7j5crKChXFI6b4sBHol4Ty0ffQwC2x7WiLETGZ7WpAamZzEIvIhA/exec";
+
+    const form = document.getElementById("registerForm");
+    const message = document.getElementById("message");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      message.textContent = "กำลังบันทึกข้อมูล...";
+
+      const formData = new FormData(form);
+
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      })
+      .then(() => {
+        message.textContent = "ลงทะเบียนสำเร็จ";
+        form.reset();
+      })
+      .catch(() => {
+        message.textContent = "เกิดข้อผิดพลาด กรุณาลองใหม่";
+      });
+    });
+  </script>
+</body>
+</html>
