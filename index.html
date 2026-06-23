@@ -30,7 +30,7 @@
           rgba(0, 20, 60, 0.05),
           rgba(0, 20, 60, 0.35)
         ),
-        url("images/cover2.png?v=2");
+        url("images/cover2.png?v=4");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -81,10 +81,11 @@
       animation-delay: 1.5s;
     }
 
+    /* bubble5 ย้ายจากตรงเด็กไปฝั่งซ้าย */
     .rb5 {
       width: 360px;
-      right: 11%;
-      bottom: 12%;
+      left: 8%;
+      bottom: 14%;
       animation-duration: 9s;
       animation-delay: 0.5s;
     }
@@ -103,27 +104,28 @@
       }
     }
 
+    /* ปุ่ม Register */
     .register-btn {
       position: relative;
       z-index: 2;
       width: 280px;
-      padding: 16px 18px;
+      padding: 16px 28px;
       border: none;
-      border-radius: 100px;
-      background: rgba(255, 255, 255, 0.92);
+      border-radius: 999px;
+      background: #000000;
       color: #ffffff;
       font-family: "Prompt", sans-serif;
-      font-size: 40px;
+      font-size: 50px;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
       transition: 0.25s ease;
     }
 
     .register-btn:hover {
       transform: translateY(-3px);
-      background: #000000;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+      background: #111111;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
     }
 
     /* หน้าฟอร์ม */
@@ -254,8 +256,8 @@
 
       .rb5 {
         width: 210px;
-        right: 4%;
-        bottom: 18%;
+        left: 6%;
+        bottom: 20%;
       }
     }
   </style>
@@ -265,11 +267,11 @@
 
   <!-- หน้าแรก -->
   <section id="home" class="home">
-    <img src="images/bubble1.png?v=2" class="real-bubble rb1" alt="bubble">
-    <img src="images/bubble2.png?v=2" class="real-bubble rb2" alt="bubble">
-    <img src="images/bubble3.png?v=2" class="real-bubble rb3" alt="bubble">
-    <img src="images/bubble4.png?v=2" class="real-bubble rb4" alt="bubble">
-    <img src="images/bubble5.png?v=2" class="real-bubble rb5" alt="bubble">
+    <img src="images/bubble1.png?v=4" class="real-bubble rb1" alt="bubble">
+    <img src="images/bubble2.png?v=4" class="real-bubble rb2" alt="bubble">
+    <img src="images/bubble3.png?v=4" class="real-bubble rb3" alt="bubble">
+    <img src="images/bubble4.png?v=4" class="real-bubble rb4" alt="bubble">
+    <img src="images/bubble5.png?v=4" class="real-bubble rb5" alt="bubble">
 
     <button class="register-btn" onclick="showRegisterForm()">
       Register
