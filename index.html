@@ -30,7 +30,7 @@
           rgba(0, 20, 60, 0.05),
           rgba(0, 20, 60, 0.35)
         ),
-        url("images/cover2.png");
+        url("images/cover2.png?v=2");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -40,7 +40,7 @@
       padding: 0 24px 72px;
     }
 
-    /* ฟองสบู่จริงที่แยกเป็น PNG */
+    /* ฟองสบู่ PNG */
     .real-bubble {
       position: absolute;
       pointer-events: none;
@@ -49,7 +49,6 @@
       animation: bubbleFloat 8s ease-in-out infinite;
     }
 
-    /* bubble1: ลูกใหญ่ซ้ายบน */
     .rb1 {
       width: 240px;
       left: 3%;
@@ -58,7 +57,6 @@
       animation-delay: 0s;
     }
 
-    /* bubble2: ลูกกลางบน */
     .rb2 {
       width: 100px;
       left: 31%;
@@ -67,7 +65,6 @@
       animation-delay: 0.8s;
     }
 
-    /* bubble3: ลูกเล็กบนกลางขวา */
     .rb3 {
       width: 70px;
       left: 58%;
@@ -76,7 +73,6 @@
       animation-delay: 1.2s;
     }
 
-    /* bubble4: ลูกใหญ่ขวาบน */
     .rb4 {
       width: 230px;
       right: 2%;
@@ -85,7 +81,6 @@
       animation-delay: 1.5s;
     }
 
-    /* bubble5: ฟองครอบเด็ก */
     .rb5 {
       width: 360px;
       right: 11%;
@@ -112,13 +107,13 @@
       position: relative;
       z-index: 2;
       width: 280px;
-      padding: 16px 28px;
+      padding: 16px 20px;
       border: none;
-      border-radius: 18px;
+      border-radius: 100px;
       background: rgba(255, 255, 255, 0.92);
-      color: #0f3c8a;
+      color: #000000;
       font-family: "Prompt", sans-serif;
-      font-size: 50px;
+      font-size: 40px;
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
@@ -217,7 +212,7 @@
       text-align: center;
     }
 
-    /* Responsive มือถือ */
+    /* มือถือ */
     @media (max-width: 768px) {
       .home {
         background-position: center;
@@ -270,11 +265,11 @@
 
   <!-- หน้าแรก -->
   <section id="home" class="home">
-    <img src="images/bubble1.png" class="real-bubble rb1" alt="bubble">
-    <img src="images/bubble2.png" class="real-bubble rb2" alt="bubble">
-    <img src="images/bubble3.png" class="real-bubble rb3" alt="bubble">
-    <img src="images/bubble4.png" class="real-bubble rb4" alt="bubble">
-    <img src="images/bubble5.png" class="real-bubble rb5" alt="bubble">
+    <img src="images/bubble1.png?v=2" class="real-bubble rb1" alt="bubble">
+    <img src="images/bubble2.png?v=2" class="real-bubble rb2" alt="bubble">
+    <img src="images/bubble3.png?v=2" class="real-bubble rb3" alt="bubble">
+    <img src="images/bubble4.png?v=2" class="real-bubble rb4" alt="bubble">
+    <img src="images/bubble5.png?v=2" class="real-bubble rb5" alt="bubble">
 
     <button class="register-btn" onclick="showRegisterForm()">
       Register
