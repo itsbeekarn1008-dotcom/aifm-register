@@ -2,96 +2,211 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>AIFM Registration</title>
+  <title>AIFX Registration</title>
+
+  <!-- Font Prompt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f7ff;
+      margin: 0;
+      font-family: "Prompt", sans-serif;
+      background: #000;
+    }
+
+    /* หน้าแรก */
+    .home {
       min-height: 100vh;
+      background-image:
+        linear-gradient(
+          rgba(0, 20, 60, 0.05),
+          rgba(0, 20, 60, 0.35)
+        ),
+        url("images/cover1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0 24px 72px;
+    }
+
+    .register-btn {
+      width: 280px;
+      padding: 16px 28px;
+      border: none;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #0f3c8a;
+      font-family: "Prompt", sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+      transition: 0.25s ease;
+    }
+
+    .register-btn:hover {
+      transform: translateY(-3px);
+      background: #ffffff;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.32);
+    }
+
+    /* หน้าฟอร์ม */
+    .register-section {
+      display: none;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #eaf4ff, #ffffff);
       align-items: center;
       justify-content: center;
-      margin: 0;
+      padding: 32px 20px;
     }
 
     .card {
-      width: 420px;
+      width: 100%;
+      max-width: 460px;
       background: white;
       padding: 32px;
-      border-radius: 24px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 40, 100, 0.15);
     }
 
     .badge {
       display: inline-block;
-      padding: 6px 12px;
-      background: #e8efff;
-      color: #2563eb;
+      padding: 7px 14px;
+      background: #e0f2fe;
+      color: #0369a1;
       border-radius: 999px;
-      font-size: 12px;
-      font-weight: bold;
+      font-size: 13px;
+      font-weight: 700;
       margin-bottom: 16px;
     }
 
     h1 {
       margin: 0 0 8px;
-      font-size: 28px;
+      color: #0f172a;
+      font-size: 30px;
     }
 
     p {
-      color: #666;
-      margin-bottom: 24px;
-    }
-
-    input, button {
-      width: 100%;
-      padding: 13px;
-      margin-top: 12px;
-      box-sizing: border-box;
-      border-radius: 12px;
-      border: 1px solid #ddd;
+      margin: 0 0 22px;
+      color: #64748b;
       font-size: 15px;
     }
 
-    button {
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border-radius: 14px;
+      border: 1px solid #cbd5e1;
+      font-family: "Prompt", sans-serif;
+      font-size: 15px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 16px;
       background: #2563eb;
       color: white;
-      border: none;
-      font-weight: bold;
+      font-family: "Prompt", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
       cursor: pointer;
-      margin-top: 18px;
+    }
+
+    .back-btn {
+      width: 100%;
+      padding: 13px;
+      margin-top: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      background: white;
+      color: #334155;
+      font-family: "Prompt", sans-serif;
+      font-size: 15px;
+      cursor: pointer;
     }
 
     #message {
       margin-top: 18px;
-      font-weight: bold;
+      font-weight: 600;
       color: #2563eb;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .home {
+        background-position: center;
+        padding-bottom: 52px;
+      }
+
+      .register-btn {
+        width: 240px;
+        font-size: 18px;
+      }
+
+      .card {
+        padding: 26px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
-    <div class="badge">EVENT REGISTRATION</div>
 
-    <h1>AIFM Registration</h1>
-    <p>ลงทะเบียนเข้าร่วมงาน AI Film Making</p>
+  <!-- หน้าแรก -->
+  <section id="home" class="home">
+    <button class="register-btn" onclick="showRegisterForm()">
+      Register
+    </button>
+  </section>
 
-    <form id="registerForm">
-      <input type="text" name="fullName" placeholder="ชื่อ-นามสกุล" required>
-      <input type="email" name="email" placeholder="อีเมล" required>
-      <input type="tel" name="phone" placeholder="เบอร์โทร" required>
-      <input type="text" name="organization" placeholder="มหาวิทยาลัย / บริษัท">
+  <!-- หน้าฟอร์มลงทะเบียน -->
+  <section id="register" class="register-section">
+    <div class="card">
+      <div class="badge">EVENT REGISTRATION</div>
 
-      <button type="submit">ลงทะเบียน</button>
-    </form>
+      <h1>AIFX Registration</h1>
+      <p>กรอกข้อมูลเพื่อลงทะเบียนเข้าร่วมงาน</p>
 
-    <div id="message"></div>
-  </div>
+      <form id="registerForm">
+        <input type="text" name="fullName" placeholder="ชื่อ-นามสกุล" required>
+        <input type="email" name="email" placeholder="อีเมล" required>
+        <input type="tel" name="phone" placeholder="เบอร์โทร" required>
+        <input type="text" name="organization" placeholder="มหาวิทยาลัย / บริษัท">
+
+        <button type="submit" class="submit-btn">ลงทะเบียน</button>
+      </form>
+
+      <button class="back-btn" onclick="goHome()">กลับหน้าแรก</button>
+
+      <div id="message"></div>
+    </div>
+  </section>
 
   <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxB3CaeeKFO1hNHg_7j5crKChXFI6b4sBHol4Ty0ffQwC2x7WiLETGZ7WpAamZzEIvIhA/exec";
+
+    function showRegisterForm() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("register").style.display = "flex";
+    }
+
+    function goHome() {
+      document.getElementById("register").style.display = "none";
+      document.getElementById("home").style.display = "flex";
+    }
 
     const form = document.getElementById("registerForm");
     const message = document.getElementById("message");
@@ -117,5 +232,6 @@
       });
     });
   </script>
+
 </body>
 </html>
