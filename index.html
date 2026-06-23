@@ -30,7 +30,7 @@
           rgba(0, 20, 60, 0.05),
           rgba(0, 20, 60, 0.35)
         ),
-        url("images/cover1.png");
+        url("images/cover2.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -40,105 +40,71 @@
       padding: 0 24px 72px;
     }
 
-    /* Bubble */
-    .bubble {
+    /* ฟองสบู่จริงที่แยกเป็น PNG */
+    .real-bubble {
       position: absolute;
-      border-radius: 50%;
       pointer-events: none;
       z-index: 1;
-
-      background: radial-gradient(circle at 30% 30%,
-        rgba(255, 255, 255, 0.9),
-        rgba(150, 220, 255, 0.28),
-        rgba(255, 140, 230, 0.18),
-        rgba(255, 255, 255, 0.04)
-      );
-
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow:
-        inset 0 0 18px rgba(255, 255, 255, 0.35),
-        0 0 22px rgba(255, 255, 255, 0.25);
-
-      backdrop-filter: blur(1px);
-      animation: floatBubble 9s ease-in-out infinite;
+      opacity: 0.95;
+      animation: bubbleFloat 8s ease-in-out infinite;
     }
 
-    .b1 {
-      width: 90px;
-      height: 90px;
-      left: 8%;
-      top: 70%;
-      animation-duration: 10s;
-    }
-
-    .b2 {
-      width: 55px;
-      height: 55px;
-      left: 28%;
-      top: 62%;
-      animation-duration: 8s;
-      animation-delay: 1s;
-    }
-
-    .b3 {
-      width: 120px;
-      height: 120px;
-      right: 10%;
-      top: 55%;
-      animation-duration: 12s;
-      animation-delay: 1.5s;
-    }
-
-    .b4 {
-      width: 45px;
-      height: 45px;
-      right: 25%;
-      top: 18%;
-      animation-duration: 7s;
-      animation-delay: 0.5s;
-    }
-
-    .b5 {
-      width: 70px;
-      height: 70px;
-      left: 55%;
-      top: 30%;
+    /* bubble1: ลูกใหญ่ซ้ายบน */
+    .rb1 {
+      width: 240px;
+      left: 3%;
+      top: 4%;
       animation-duration: 11s;
-      animation-delay: 2s;
+      animation-delay: 0s;
     }
 
-    .b6 {
-      width: 38px;
-      height: 38px;
-      left: 75%;
-      top: 72%;
-      animation-duration: 9s;
+    /* bubble2: ลูกกลางบน */
+    .rb2 {
+      width: 100px;
+      left: 31%;
+      top: 2%;
+      animation-duration: 8s;
+      animation-delay: 0.8s;
+    }
+
+    /* bubble3: ลูกเล็กบนกลางขวา */
+    .rb3 {
+      width: 70px;
+      left: 58%;
+      top: 6%;
+      animation-duration: 7s;
       animation-delay: 1.2s;
     }
 
-    .b7 {
-      width: 110px;
-      height: 110px;
-      left: 15%;
-      top: 20%;
-      animation-duration: 13s;
-      animation-delay: 2.4s;
+    /* bubble4: ลูกใหญ่ขวาบน */
+    .rb4 {
+      width: 230px;
+      right: 2%;
+      top: 12%;
+      animation-duration: 10s;
+      animation-delay: 1.5s;
     }
 
-    @keyframes floatBubble {
+    /* bubble5: ฟองครอบเด็ก */
+    .rb5 {
+      width: 360px;
+      right: 11%;
+      bottom: 12%;
+      animation-duration: 9s;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes bubbleFloat {
       0% {
         transform: translateY(0) translateX(0) scale(1);
-        opacity: 0.65;
       }
 
       50% {
-        transform: translateY(-55px) translateX(20px) scale(1.08);
-        opacity: 1;
+        transform: translateY(-28px) translateX(14px) scale(1.03);
       }
 
       100% {
         transform: translateY(0) translateX(0) scale(1);
-        opacity: 0.65;
       }
     }
 
@@ -152,7 +118,7 @@
       background: rgba(255, 255, 255, 0.92);
       color: #0f3c8a;
       font-family: "Prompt", sans-serif;
-      font-size: 40px;
+      font-size: 50px;
       font-weight: 700;
       cursor: pointer;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
@@ -251,6 +217,7 @@
       text-align: center;
     }
 
+    /* Responsive มือถือ */
     @media (max-width: 768px) {
       .home {
         background-position: center;
@@ -266,14 +233,34 @@
         padding: 26px;
       }
 
-      .b3 {
-        width: 80px;
-        height: 80px;
+      .rb1 {
+        width: 135px;
+        left: 2%;
+        top: 7%;
       }
 
-      .b7 {
-        width: 75px;
-        height: 75px;
+      .rb2 {
+        width: 65px;
+        left: 35%;
+        top: 8%;
+      }
+
+      .rb3 {
+        width: 50px;
+        left: 60%;
+        top: 9%;
+      }
+
+      .rb4 {
+        width: 130px;
+        right: -4%;
+        top: 16%;
+      }
+
+      .rb5 {
+        width: 210px;
+        right: 4%;
+        bottom: 18%;
       }
     }
   </style>
@@ -283,13 +270,11 @@
 
   <!-- หน้าแรก -->
   <section id="home" class="home">
-    <div class="bubble b1"></div>
-    <div class="bubble b2"></div>
-    <div class="bubble b3"></div>
-    <div class="bubble b4"></div>
-    <div class="bubble b5"></div>
-    <div class="bubble b6"></div>
-    <div class="bubble b7"></div>
+    <img src="images/bubble1.png" class="real-bubble rb1" alt="bubble">
+    <img src="images/bubble2.png" class="real-bubble rb2" alt="bubble">
+    <img src="images/bubble3.png" class="real-bubble rb3" alt="bubble">
+    <img src="images/bubble4.png" class="real-bubble rb4" alt="bubble">
+    <img src="images/bubble5.png" class="real-bubble rb5" alt="bubble">
 
     <button class="register-btn" onclick="showRegisterForm()">
       Register
