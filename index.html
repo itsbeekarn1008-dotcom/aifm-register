@@ -23,12 +23,11 @@
     .hero-aifx {
       position: relative;
       width: 100%;
-      min-height: 100vh;
+      min-height: 100svh;
       overflow: hidden;
       background: #0875c9;
     }
 
-    /* พื้นหลังหลัก */
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -39,11 +38,11 @@
       z-index: 1;
     }
 
-    /* ฟองสบู่ */
     .bubble {
       position: absolute;
       z-index: 3;
       height: auto;
+      display: block;
       pointer-events: none;
       user-select: none;
     }
@@ -72,12 +71,11 @@
       width: 15%;
     }
 
-    /* โลโก้ CEA / TCDC */
     .logo-group {
       position: absolute;
       top: 5%;
       right: 4%;
-      z-index: 5;
+      z-index: 999;
 
       display: flex;
       align-items: center;
@@ -96,14 +94,14 @@
       display: block;
     }
 
-    /* วันเวลา */
     .event-date {
       position: absolute;
       left: 50%;
       top: 58%;
       transform: translateX(-50%);
-      z-index: 6;
+      z-index: 999;
 
+      display: block;
       color: #000000;
       font-size: clamp(24px, 2.7vw, 52px);
       font-weight: 400;
@@ -112,13 +110,12 @@
       white-space: nowrap;
     }
 
-    /* ปุ่ม Register */
     .register-btn {
       position: absolute;
       left: 50%;
       bottom: 8%;
       transform: translateX(-50%);
-      z-index: 6;
+      z-index: 999;
 
       display: inline-flex;
       align-items: center;
@@ -142,9 +139,7 @@
       opacity: 0.9;
     }
 
-    /* =========================
-       TABLET
-    ========================= */
+    /* Tablet */
     @media (max-width: 1024px) {
       .bubble-01 {
         left: 3%;
@@ -196,16 +191,9 @@
       }
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* Mobile */
     @media (max-width: 768px) {
-      .hero-aifx {
-        min-height: 100svh;
-      }
-
       .hero-bg {
-        object-fit: cover;
         object-position: center;
       }
 
@@ -260,9 +248,7 @@
       }
     }
 
-    /* =========================
-       SMALL MOBILE
-    ========================= */
+    /* Small Mobile */
     @media (max-width: 480px) {
       .bubble-01 {
         width: 38%;
@@ -307,14 +293,12 @@
 <body>
   <main>
     <section class="hero-aifx">
-      <!-- Background -->
       <img
         class="hero-bg"
         src="assets/cover.png"
         alt="AIFX event background"
       />
 
-      <!-- Bubble PNG -->
       <img
         class="bubble bubble-01"
         src="assets/bubble01.png"
@@ -339,27 +323,24 @@
         alt="bubble 04"
       />
 
-      <!-- CEA / TCDC Logo -->
       <div class="logo-group">
         <img
           class="logo-cea"
-          src="assets/cea-logo.png"
+          src="assets/cea.png"
           alt="CEA logo"
         />
 
         <img
           class="logo-tcdc"
-          src="assets/tcdc-logo.png"
+          src="assets/tcdc.png"
           alt="TCDC logo"
         />
       </div>
 
-      <!-- Date / Time -->
       <div class="event-date">
         18 JULY 2026 | 13.00 - 18.00
       </div>
 
-      <!-- Register Button -->
       <a href="#" class="register-btn">
         Register
       </a>
