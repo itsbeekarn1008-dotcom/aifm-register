@@ -38,6 +38,9 @@
       z-index: 1;
     }
 
+    /* =========================
+       BUBBLES
+    ========================= */
     .bubble {
       position: absolute;
       z-index: 3;
@@ -45,35 +48,99 @@
       display: block;
       pointer-events: none;
       user-select: none;
+      will-change: transform;
     }
 
     .bubble-01 {
       left: 3%;
       top: 11%;
       width: 19%;
+      animation: floatBubble01 6s ease-in-out infinite alternate;
     }
 
     .bubble-02 {
       left: 35%;
       top: 7%;
       width: 9.5%;
+      animation: floatBubble02 5s ease-in-out infinite alternate;
     }
 
     .bubble-03 {
       left: 8.2%;
       top: 55%;
       width: 14%;
+      animation: floatBubble03 7s ease-in-out infinite alternate;
     }
 
     .bubble-04 {
       right: 3.5%;
       top: 30%;
       width: 15%;
+      animation: floatBubble04 6.5s ease-in-out infinite alternate;
     }
 
+    @keyframes floatBubble01 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(12px, -18px) scale(1.03);
+      }
+
+      100% {
+        transform: translate(-8px, 10px) scale(0.98);
+      }
+    }
+
+    @keyframes floatBubble02 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-10px, -14px) scale(1.05);
+      }
+
+      100% {
+        transform: translate(8px, 12px) scale(0.97);
+      }
+    }
+
+    @keyframes floatBubble03 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(10px, -20px) scale(1.04);
+      }
+
+      100% {
+        transform: translate(-12px, 8px) scale(0.98);
+      }
+    }
+
+    @keyframes floatBubble04 {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(-14px, -16px) scale(1.03);
+      }
+
+      100% {
+        transform: translate(10px, 10px) scale(0.98);
+      }
+    }
+
+    /* =========================
+       LOGOS
+    ========================= */
     .logo-group {
       position: absolute;
-      top: 5%;
+      top: 2%;
       right: 4%;
       z-index: 999;
 
@@ -94,6 +161,9 @@
       display: block;
     }
 
+    /* =========================
+       DATE
+    ========================= */
     .event-date {
       position: absolute;
       left: 50%;
@@ -110,6 +180,9 @@
       white-space: nowrap;
     }
 
+    /* =========================
+       BUTTON
+    ========================= */
     .register-btn {
       position: absolute;
       left: 50%;
@@ -139,7 +212,9 @@
       opacity: 0.9;
     }
 
-    /* Tablet */
+    /* =========================
+       TABLET
+    ========================= */
     @media (max-width: 1024px) {
       .bubble-01 {
         left: 3%;
@@ -166,7 +241,7 @@
       }
 
       .logo-group {
-        top: 5%;
+        top: 2%;
         right: 4%;
         gap: 18px;
       }
@@ -191,7 +266,9 @@
       }
     }
 
-    /* Mobile */
+    /* =========================
+       MOBILE
+    ========================= */
     @media (max-width: 768px) {
       .hero-bg {
         object-position: center;
@@ -222,7 +299,7 @@
       }
 
       .logo-group {
-        top: 4%;
+        top: 1.8%;
         right: 4%;
         gap: 12px;
       }
@@ -248,7 +325,9 @@
       }
     }
 
-    /* Small Mobile */
+    /* =========================
+       SMALL MOBILE
+    ========================= */
     @media (max-width: 480px) {
       .bubble-01 {
         width: 38%;
@@ -267,6 +346,7 @@
       }
 
       .logo-group {
+        top: 1.5%;
         gap: 10px;
       }
 
@@ -293,12 +373,14 @@
 <body>
   <main>
     <section class="hero-aifx">
+      <!-- Background -->
       <img
         class="hero-bg"
         src="./images/cover2.png"
         alt="AIFX event background"
       />
 
+      <!-- Bubbles -->
       <img
         class="bubble bubble-01"
         src="./images/bubble01.png"
@@ -323,6 +405,7 @@
         alt="bubble 04"
       />
 
+      <!-- CEA / TCDC Logos -->
       <div class="logo-group">
         <img
           class="logo-cea"
@@ -337,10 +420,12 @@
         />
       </div>
 
+      <!-- Date / Time -->
       <div class="event-date">
         18 JULY 2026 | 13.00 - 18.00
       </div>
 
+      <!-- Register Button -->
       <a href="#" class="register-btn">
         Register
       </a>
